@@ -3,14 +3,15 @@ $(document).ready(function() {
 })
 
 function set() {
-	var windowWidth = document.body.clientWidth
+	var windowWidth = $(window).width()
   console.log(windowWidth)
   $('#login').css('width', windowWidth)
 
-  const header = 50
-  const footer = 20
-  var windowHeight = document.body.scrollHeight
+  var header = 50
+  var footer = 20
+  var windowHeight = $(window).height()
   var contentHeight = windowHeight - header - footer
+  console.log(contentHeight)
   $('.content').css('height', contentHeight+'px').css('backgroundSize', ""+windowWidth+"px "+contentHeight+"px")
   $('.form-control').css('top', contentHeight/3).css('left',windowWidth/2 - 300)
 }
